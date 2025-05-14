@@ -2,33 +2,47 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var acceleration: float = 200.0
-@export var drag: float = 100.0  # Resistance to stop quickly (simulates water)
-
-
-var player_position: Vector2
-var direction_to_player: Vector2
+@export var drag: float = 100.0
 
 @onready var player = get_parent().get_node("Player")
+
+var fleeing = false  # Is the creature currently fleeing?
+var light_timer := 0.0  # Time to continue fleeing
+var flee_duration := 2.0  # How long to flee when exposed to light (seconds)
 
 func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 
-	player_position = player.global_position
-	direction_to_player = (player_position - global_position).normalized() #direction vector
+	# Decrease flee timer if active
+	if fleeing:
+		light_timer -= delta
+		if light_timer <= 0:
+			fleeing = false  # Resume chasing
 
-	#only accelerate if far enough from player
+	# Calculate direction
+	var player_position = player.global_position
+	var direction: Vector2
+
+	if fleeing:
+		# Move opposite to the player
+		direction = (global_position - player_position).normalized()
+	else:
+		# Move toward the player
+		direction = (player_position - global_position).normalized()
+
+	# Accelerate and move
 	if global_position.distance_to(player_position) > 3:
-		#accelerate toward the player
-		velocity += direction_to_player * acceleration * delta
-		if velocity.length() > speed: #cap the speed
+		velocity += direction * acceleration * delta
+		if velocity.length() > speed:
 			velocity = velocity.normalized() * speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, drag * delta) #slow down when close
+		velocity = velocity.move_toward(Vector2.ZERO, drag * delta)
+
 	move_and_slide()
-	look_at(player_position)
-	
-func entered_zone(body :CharacterBody2D):
+	look_at(player_position)  # Optional: creature always looks at player
+
+func entered_zone(body: CharacterBody2D) -> void:
 	if body == player:
-		print("player detected by the creature")
-		self.hide()
+		fleeing = true
+		light_timer = flee_duration
