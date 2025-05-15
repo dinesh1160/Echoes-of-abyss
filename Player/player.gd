@@ -5,6 +5,7 @@ var acceleration := 800.0
 var drag := 400.0          
 
 @onready var Creature = get_parent().get_node("Creature")
+@onready var sprite: Sprite2D = $Icon
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -14,7 +15,14 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
 		#print(input_dir)
 		rotation = velocity.angle()
-		global_rotation = rotation   # or -90, test both
+		global_rotation = rotation 
+		
+		if velocity.x < -10:
+			sprite.flip_h = true
+			sprite.flip_v = true
+		elif velocity.x > 10:
+			sprite.flip_h = false
+			sprite.flip_v = false
 
 	else:
 		
@@ -25,7 +33,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_lightarea_body_entered(body: Node2D) -> void:
 	if body == Creature:
-		#logic of moving away from the submarine(player) which is from the creature (func entered_zone)
-		#print("detected")
 		Creature.entered_zone(self)
 		
+func _on_lightarea_body_exited(body: Node2D) -> void:
+	if body == Creature:
+		Creature.exited_zone(self)

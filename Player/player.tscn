@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_y7r1u"]
 [ext_resource type="Texture2D" uid="uid://blrv8tq8665ar" path="res://icon.svg" id="2_xo1nx"]
-[ext_resource type="Texture2D" uid="uid://dx2biguaci13q" path="res://Assests/lightcone.png" id="3_je6w0"]
+[ext_resource type="Texture2D" uid="uid://2iwrwm1p0e7v" path="res://Assests/lightcone.png" id="3_je6w0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5e50"]
 radius = 21.0238
@@ -18,17 +18,20 @@ position = Vector2(0, -1)
 texture = ExtResource("2_xo1nx")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(8, 13)
-rotation = -1.5708
+position = Vector2(2, 13)
 texture = ExtResource("3_je6w0")
-offset = Vector2(-2.36658, -14.1758)
+offset = Vector2(350, 0)
+texture_scale = 0.7
 
 [node name="lightarea" type="Area2D" parent="PointLight2D"]
 position = Vector2(-11, -1)
 rotation = 1.5708
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PointLight2D/lightarea"]
-position = Vector2(8, -14)
+position = Vector2(7.99997, -25.3791)
+rotation = -1.55509
+scale = Vector2(1, 1.03115)
 polygon = PackedVector2Array(15, -17, 140, -195, 281, -256, 508, -260, 549, -121, 547, 64, 528, 221, 269, 193, 130, 142, 19, 18)
 
 [connection signal="body_entered" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_entered"]
+[connection signal="body_exited" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_exited"]

@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @onready var player = get_parent().get_node("Player")
 
-var fleeing = false  # Is the creature currently fleeing?
+var fleeing = false  # Is the creature currently fleeing
 var light_timer := 0.0  # Time to continue fleeing
 var flee_duration := 2.0  # How long to flee when exposed to light (seconds)
 
@@ -15,10 +15,10 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Decrease flee timer if active
-	if fleeing:
-		light_timer -= delta
-		if light_timer <= 0:
-			fleeing = false  # Resume chasing
+	#if fleeing:
+		#light_timer -= delta
+		#if light_timer <= 0:
+			#fleeing = false  # Resume chasing
 
 	# Calculate direction
 	var player_position = player.global_position
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		direction = (player_position - global_position).normalized()
 
 	# Accelerate and move
-	if global_position.distance_to(player_position) > 3:
+	if global_position.distance_to(player_position) > 5:
 		velocity += direction * acceleration * delta
 		if velocity.length() > speed:
 			velocity = velocity.normalized() * speed
@@ -45,4 +45,9 @@ func _physics_process(delta: float) -> void:
 func entered_zone(body: CharacterBody2D) -> void:
 	if body == player:
 		fleeing = true
-		light_timer = flee_duration
+		#light_timer = flee_duration
+		
+func exited_zone(body: CharacterBody2D) -> void:
+	if body == player:
+		fleeing = false
+		#light_timer = flee_duration
