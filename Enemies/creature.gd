@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.normalized() * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, drag * delta)
-
+	
 	move_and_slide()
 	look_at(player_position)  # Optional: creature always looks at player
 

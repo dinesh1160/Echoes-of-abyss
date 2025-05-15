@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://r458fyafjda4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko7tn"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl4wa"]
+bg_color = Color(0.43198, 0.676954, 0.317978, 1)
+
+[node name="O2ProgressBar" type="ProgressBar"]
+custom_minimum_size = Vector2(450, 0)
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 451.0
+offset_bottom = 19.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ko7tn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tl4wa")
+value = 90.0
+fill_mode = 1
+show_percentage = false
