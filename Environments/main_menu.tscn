@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://l6o5opfcap8g"]
+
+[ext_resource type="Script" path="res://Environments/main_menu.gd" id="1_0b588"]
+[ext_resource type="Texture2D" uid="uid://dgbrhsy6tst5a" path="res://Assests/work_-removebg-preview.png" id="2_micjc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0b588")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(566, 318)
+texture = ExtResource("2_micjc")

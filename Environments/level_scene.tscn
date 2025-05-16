@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg1ybrb1s6hbi"]
+[gd_scene load_steps=7 format=3 uid="uid://bg1ybrb1s6hbi"]
 
 [ext_resource type="Script" path="res://Environments/level_scene.gd" id="1_yhsw2"]
+[ext_resource type="Texture2D" uid="uid://cvc0ei4d4yt20" path="res://Assests/tilesets/level1.png" id="2_0vmq1"]
 [ext_resource type="PackedScene" uid="uid://dbjk4muyqjt0n" path="res://Player/player.tscn" id="2_vhavy"]
 [ext_resource type="PackedScene" uid="uid://d1vf4dd3fqvqv" path="res://Enemies/creature.tscn" id="3_2u08s"]
 [ext_resource type="PackedScene" uid="uid://r458fyafjda4" path="res://Environments/o_2_progress_bar.tscn" id="4_qymg8"]
@@ -9,7 +10,12 @@
 [node name="level_scene" type="Node2D"]
 script = ExtResource("1_yhsw2")
 
+[node name="Level1" type="Sprite2D" parent="."]
+position = Vector2(2437, 131)
+texture = ExtResource("2_0vmq1")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -14.0
 offset_top = -7.0
 offset_right = 3141.0
@@ -17,12 +23,13 @@ offset_bottom = 1768.0
 color = Color(5.29438e-07, 0.300851, 0.300967, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.442911, 0.442911, 0.442911, 1)
+color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("2_vhavy")]
+scale = Vector2(0.675, 0.675)
 
 [node name="Creature" parent="." instance=ExtResource("3_2u08s")]
 position = Vector2(467, 128)
