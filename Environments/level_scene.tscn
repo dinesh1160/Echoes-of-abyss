@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg1ybrb1s6hbi"]
+[gd_scene load_steps=6 format=3 uid="uid://bg1ybrb1s6hbi"]
 
 [ext_resource type="Script" path="res://Environments/level_scene.gd" id="1_yhsw2"]
 [ext_resource type="PackedScene" uid="uid://dbjk4muyqjt0n" path="res://Player/player.tscn" id="2_vhavy"]
 [ext_resource type="PackedScene" uid="uid://d1vf4dd3fqvqv" path="res://Enemies/creature.tscn" id="3_2u08s"]
 [ext_resource type="PackedScene" uid="uid://r458fyafjda4" path="res://Environments/o_2_progress_bar.tscn" id="4_qymg8"]
+[ext_resource type="PackedScene" uid="uid://c3arkurt3yjdg" path="res://Environments/pause_menu.tscn" id="5_o5abf"]
 
 [node name="level_scene" type="Node2D"]
 script = ExtResource("1_yhsw2")
@@ -34,3 +35,5 @@ offset_top = 63.0
 offset_right = 568.0
 offset_bottom = 86.0
 rotation = 1.5708
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_o5abf")]

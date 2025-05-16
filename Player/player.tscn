@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbjk4muyqjt0n"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_y7r1u"]
-[ext_resource type="Texture2D" uid="uid://blrv8tq8665ar" path="res://icon.svg" id="2_xo1nx"]
+[ext_resource type="Texture2D" uid="uid://bgsdj18wrld1u" path="res://Assests/sub.png" id="2_ciup0"]
 [ext_resource type="Texture2D" uid="uid://2iwrwm1p0e7v" path="res://Assests/lightcone.png" id="3_je6w0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5e50"]
@@ -13,18 +13,19 @@ script = ExtResource("1_y7r1u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b5e50")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
-texture = ExtResource("2_xo1nx")
+[node name="Sub" type="Sprite2D" parent="."]
+position = Vector2(-0.999999, 6)
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("2_ciup0")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(2, 13)
 texture = ExtResource("3_je6w0")
-offset = Vector2(350, 0)
+offset = Vector2(400, 0)
 texture_scale = 0.7
 
 [node name="lightarea" type="Area2D" parent="PointLight2D"]
-position = Vector2(-11, -1)
+position = Vector2(-2, -13)
 rotation = 1.5708
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PointLight2D/lightarea"]

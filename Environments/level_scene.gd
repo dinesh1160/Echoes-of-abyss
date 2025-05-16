@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 	
 	if remaining_time <= 0:
 		_game_over()
-	
+	 
+	#if Input.is_action_just_pressed("Pause"):
+		#get_tree().paused = true
+		
 func _game_over():
 	print("Oxygen depleted! Game Over.")

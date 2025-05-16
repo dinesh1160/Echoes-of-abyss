@@ -5,7 +5,7 @@ var acceleration := 800.0
 var drag := 400.0          
 
 @onready var Creature = get_parent().get_node("Creature")
-@onready var sprite: Sprite2D = $Icon
+@onready var sprite: Sprite2D = $Sub
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left", "right", "up", "down")
@@ -18,10 +18,10 @@ func _physics_process(delta: float) -> void:
 		global_rotation = rotation 
 		
 		if velocity.x < -10:
-			sprite.flip_h = true
+			#sprite.flip_h = true
 			sprite.flip_v = true
 		elif velocity.x > 10:
-			sprite.flip_h = false
+			#sprite.flip_h = false
 			sprite.flip_v = false
 
 	else:
