@@ -6,6 +6,7 @@ var drag := 400.0
 
 @onready var Creature = get_parent().get_node("Creature")
 @onready var Camera = get_parent().get_node("Camera2D")
+@onready var End_menu = get_parent().get_node("CanvasLayer/EndMenu")
 
 @onready var sprite: Sprite2D = $Sub
 
@@ -59,5 +60,8 @@ func game_over_by_attack() -> void:
 	Camera.apply_shake()
 	await get_tree().create_timer(0.8).timeout
 	Camera.apply_shake()
+	End_menu.display()
+	get_tree().paused = true
+	
 	
 	

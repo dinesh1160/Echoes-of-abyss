@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed: float = 300.0
-@export var acceleration: float = 100.0
+@export var speed: float = 500.0
+@export var acceleration: float = 200.0
 @export var drag: float = 50.0
 
 @onready var player = get_parent().get_node("Player")

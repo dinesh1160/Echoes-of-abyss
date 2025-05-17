@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg1ybrb1s6hbi"]
+[gd_scene load_steps=10 format=3 uid="uid://bg1ybrb1s6hbi"]
 
 [ext_resource type="Script" path="res://Environments/level_scene.gd" id="1_yhsw2"]
 [ext_resource type="Script" path="res://Environments/camera_2d.gd" id="2_njyce"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://r458fyafjda4" path="res://Environments/o_2_progress_bar.tscn" id="4_qymg8"]
 [ext_resource type="PackedScene" uid="uid://c3arkurt3yjdg" path="res://Environments/pause_menu.tscn" id="5_o5abf"]
 [ext_resource type="Texture2D" uid="uid://mqm7r3gd3pme" path="res://Assests/tilesets/level.png" id="6_nkssn"]
+[ext_resource type="PackedScene" uid="uid://dabuutj6g2eu5" path="res://Environments/end_menu.tscn" id="8_hc2fx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pgioh"]
 vertices = PackedVector2Array(-243.922, 222.562, -296.039, -338.227, 552.742, -357.062, 513.93, 186.992, 911.859, -300.969, 890.906, 199.148, 744.938, -465.828, 884.562, -537.25, 2239.47, -611.219, 2379.55, -397.211, 2339.97, -313.742, 2084.97, -414.977, 1993.35, -577.562, 2087.14, -734.5, 2007.68, -883.094, 1891.77, -708, 1762.64, -1031.33, 1987.22, -1310.17, 2046.69, -1193.2, 1323.92, -1642.87, 1730.21, 148.781, 1844.35, 358.688, 1577.48, 588.82, 1190.95, 571.211, 1600.24, -67.8281, 1730.21, 148.773, 1387.39, -146.672, 1154.91, -240.461, 670.141, -627.711, 802.109, -878.75, 1053.61, -730.727, 1318.51, -1009.79, 794.117, -1052.54, 899.367, -1236.24, 972.039, -1529.9, 1091.02, -1648.88, 1752.21, -1760.7, 1874.77, -1596.29, 1975.26, -1437.67, 1485.26, -1859.33, 1653.8, -1870.69)
@@ -47,6 +48,9 @@ rotation = 1.5708
 metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_o5abf")]
+visible = false
+
+[node name="EndMenu" parent="CanvasLayer" instance=ExtResource("8_hc2fx")]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
