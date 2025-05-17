@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgbrhsy6tst5a"
-path="res://.godot/imported/work_-removebg-preview.png-b8f648460aac00c8e6238de3c6a1ac60.ctex"
+uid="uid://mqm7r3gd3pme"
+path="res://.godot/imported/level.png-81e054b7918c441e0844fe2a1165c136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/work_-removebg-preview.png"
-dest_files=["res://.godot/imported/work_-removebg-preview.png-b8f648460aac00c8e6238de3c6a1ac60.ctex"]
+source_file="res://Assests/tilesets/level.png"
+dest_files=["res://.godot/imported/level.png-81e054b7918c441e0844fe2a1165c136.ctex"]
 
 [params]
 

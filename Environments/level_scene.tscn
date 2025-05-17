@@ -1,26 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://bg1ybrb1s6hbi"]
 
 [ext_resource type="Script" path="res://Environments/level_scene.gd" id="1_yhsw2"]
-[ext_resource type="Texture2D" uid="uid://cvc0ei4d4yt20" path="res://Assests/tilesets/level1.png" id="2_0vmq1"]
 [ext_resource type="PackedScene" uid="uid://dbjk4muyqjt0n" path="res://Player/player.tscn" id="2_vhavy"]
 [ext_resource type="PackedScene" uid="uid://d1vf4dd3fqvqv" path="res://Enemies/creature.tscn" id="3_2u08s"]
 [ext_resource type="PackedScene" uid="uid://r458fyafjda4" path="res://Environments/o_2_progress_bar.tscn" id="4_qymg8"]
 [ext_resource type="PackedScene" uid="uid://c3arkurt3yjdg" path="res://Environments/pause_menu.tscn" id="5_o5abf"]
+[ext_resource type="Texture2D" uid="uid://mqm7r3gd3pme" path="res://Assests/tilesets/level.png" id="6_nkssn"]
 
 [node name="level_scene" type="Node2D"]
 script = ExtResource("1_yhsw2")
 
-[node name="Level1" type="Sprite2D" parent="."]
-position = Vector2(2437, 131)
-texture = ExtResource("2_0vmq1")
-
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = -14.0
-offset_top = -7.0
-offset_right = 3141.0
-offset_bottom = 1768.0
-color = Color(5.29438e-07, 0.300851, 0.300967, 1)
+offset_top = -3877.0
+offset_right = 9972.0
+offset_bottom = 3850.0
+color = Color(5.58317e-06, 0.633342, 0.633566, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.10748, 0.10748, 0.10748, 1)
@@ -42,5 +37,13 @@ offset_top = 63.0
 offset_right = 568.0
 offset_bottom = 86.0
 rotation = 1.5708
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_o5abf")]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(5012, -7)
+texture = ExtResource("6_nkssn")

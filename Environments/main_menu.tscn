@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://l6o5opfcap8g"]
 
 [ext_resource type="Script" path="res://Environments/main_menu.gd" id="1_0b588"]
-[ext_resource type="Texture2D" uid="uid://dgbrhsy6tst5a" path="res://Assests/work_-removebg-preview.png" id="2_micjc"]
+[ext_resource type="Texture2D" uid="uid://dq7s7kl54ntp0" path="res://Assests/work!(1).png" id="2_poyhl"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0b588")
 
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(566, 318)
-texture = ExtResource("2_micjc")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Work!(1)" type="Sprite2D" parent="."]
+position = Vector2(524, 318)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("2_poyhl")

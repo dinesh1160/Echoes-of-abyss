@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://trxmeaxws8wb"
-path="res://.godot/imported/Mossy - Decorations&Hazards.png-5aaed280c8917f8c902c10bd69cd2a1a.ctex"
+uid="uid://dq7s7kl54ntp0"
+path="res://.godot/imported/work!(1).png-9652a6a0539871308ecd063ddd7913fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/tilesets/Mossy - Decorations&Hazards.png"
-dest_files=["res://.godot/imported/Mossy - Decorations&Hazards.png-5aaed280c8917f8c902c10bd69cd2a1a.ctex"]
+source_file="res://Assests/work!(1).png"
+dest_files=["res://.godot/imported/work!(1).png-9652a6a0539871308ecd063ddd7913fc.ctex"]
 
 [params]
 
