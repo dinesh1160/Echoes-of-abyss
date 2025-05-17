@@ -32,7 +32,14 @@ rotation = 1.5708
 position = Vector2(7.99997, -25.3791)
 rotation = -1.55509
 scale = Vector2(1, 1.03115)
-polygon = PackedVector2Array(15, -17, 140, -195, 281, -256, 508, -260, 549, -121, 547, 64, 528, 221, 269, 193, 130, 142, 19, 18)
+polygon = PackedVector2Array(15, -17, 148.963, -165.215, 281, -256, 551.688, -247.004, 654.901, -172.924, 668.471, 109.114, 595.837, 255.707, 293.685, 248.672, 130.244, 160.96, 19, 18)
+
+[node name="haltarea" type="Area2D" parent="PointLight2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PointLight2D/haltarea"]
+polygon = PackedVector2Array(49, -77, 142, -287, 313, -395, 615, -392, 846, -221, 855, 61, 768, 331, 597, 421, 250, 391, 34, 148, 19, 37, 139, 169, 301, 277, 606, 289, 720, 148, 708, -185, 603, -266, 319, -284, 172, -191)
 
 [connection signal="body_entered" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_entered"]
 [connection signal="body_exited" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_exited"]
+[connection signal="body_entered" from="PointLight2D/haltarea" to="." method="_on_haltarea_body_entered"]
+[connection signal="body_exited" from="PointLight2D/haltarea" to="." method="_on_haltarea_body_exited"]

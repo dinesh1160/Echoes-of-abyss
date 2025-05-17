@@ -15,3 +15,5 @@ shape = SubResource("CircleShape2D_o3505")
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-2, 2)
 texture = ExtResource("2_ygio1")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
