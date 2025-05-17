@@ -18,10 +18,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-307, -348, 550, -367, 
 script = ExtResource("1_yhsw2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -14.0
+offset_left = -2963.0
 offset_top = -3877.0
-offset_right = 9972.0
-offset_bottom = 3850.0
+offset_right = 12712.0
+offset_bottom = 3926.0
 color = Color(5.58317e-06, 0.633342, 0.633566, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -29,6 +29,7 @@ color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+limit_left = 0
 script = ExtResource("2_njyce")
 
 [node name="Player" parent="." instance=ExtResource("2_vhavy")]
