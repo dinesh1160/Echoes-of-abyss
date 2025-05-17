@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg1ybrb1s6hbi"]
+[gd_scene load_steps=9 format=3 uid="uid://bg1ybrb1s6hbi"]
 
 [ext_resource type="Script" path="res://Environments/level_scene.gd" id="1_yhsw2"]
+[ext_resource type="Script" path="res://Environments/camera_2d.gd" id="2_njyce"]
 [ext_resource type="PackedScene" uid="uid://dbjk4muyqjt0n" path="res://Player/player.tscn" id="2_vhavy"]
 [ext_resource type="PackedScene" uid="uid://d1vf4dd3fqvqv" path="res://Enemies/creature.tscn" id="3_2u08s"]
 [ext_resource type="PackedScene" uid="uid://r458fyafjda4" path="res://Environments/o_2_progress_bar.tscn" id="4_qymg8"]
@@ -16,7 +17,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-307, -348, 550, -367, 
 script = ExtResource("1_yhsw2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = -14.0
 offset_top = -3877.0
 offset_right = 9972.0
@@ -28,6 +28,7 @@ color = Color(0.10748, 0.10748, 0.10748, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+script = ExtResource("2_njyce")
 
 [node name="Player" parent="." instance=ExtResource("2_vhavy")]
 scale = Vector2(0.675, 0.675)

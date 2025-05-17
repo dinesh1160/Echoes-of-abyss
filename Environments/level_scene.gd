@@ -21,8 +21,7 @@ func _process(delta: float) -> void:
 	o_2_progress_bar.value = remaining_time
 	
 	if remaining_time <= 0:
-		_game_over()
-	 
+		game_over_by_depletion()
 	
-func _game_over():
+func game_over_by_depletion():
 	print("Oxygen depleted! Game Over.")

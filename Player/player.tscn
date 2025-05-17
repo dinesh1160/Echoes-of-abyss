@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbjk4muyqjt0n"]
+[gd_scene load_steps=6 format=3 uid="uid://dbjk4muyqjt0n"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_y7r1u"]
 [ext_resource type="Texture2D" uid="uid://bgsdj18wrld1u" path="res://Assests/sub.png" id="2_ciup0"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5e50"]
 radius = 21.0238
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scc8k"]
+radius = 98.0
+height = 238.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_y7r1u")
@@ -39,7 +43,14 @@ polygon = PackedVector2Array(15, -17, 148.963, -165.215, 281, -256, 551.688, -24
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PointLight2D/haltarea"]
 polygon = PackedVector2Array(49, -77, 142, -287, 313, -395, 615, -392, 846, -221, 855, 61, 768, 331, 597, 421, 250, 391, 34, 148, 19, 37, 139, 169, 301, 277, 606, 289, 720, 148, 708, -185, 603, -266, 319, -284, 172, -191)
 
+[node name="hitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitArea"]
+position = Vector2(-50, 16)
+shape = SubResource("CapsuleShape2D_scc8k")
+
 [connection signal="body_entered" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_entered"]
 [connection signal="body_exited" from="PointLight2D/lightarea" to="." method="_on_lightarea_body_exited"]
 [connection signal="body_entered" from="PointLight2D/haltarea" to="." method="_on_haltarea_body_entered"]
 [connection signal="body_exited" from="PointLight2D/haltarea" to="." method="_on_haltarea_body_exited"]
+[connection signal="body_entered" from="hitArea" to="." method="_on_hit_area_body_entered"]
