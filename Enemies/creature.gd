@@ -9,29 +9,36 @@ extends CharacterBody2D
 
 var fleeing = false
 var halt = false
+var nav_ready = false
 
 func _ready() -> void:
 	agent.path_desired_distance = 10.0
 	agent.target_desired_distance = 5.0
+	await get_tree().process_frame  
+	nav_ready = true
 
 func _physics_process(delta: float) -> void:
-	if player == null:
+
+	if player == null or not nav_ready:
 		return
 
 	if fleeing:
 		# Move away from player directly, ignore pathfinding
 		var flee_direction = (global_position - player.global_position).normalized()
-		velocity = velocity.move_toward(flee_direction * speed, acceleration * delta)
+		velocity = flee_direction * speed*0.3
+	elif halt and !fleeing:
+		velocity = Vector2.ZERO
+		
 	else:
-		if !halt:
-			agent.set_target_position(player.global_position)
+		
+		agent.set_target_position(player.global_position)
 
-			if agent.is_navigation_finished():
-				velocity = velocity.move_toward(Vector2.ZERO, drag * delta)
-			else:
-				var next_position = agent.get_next_path_position()
-				var direction = (next_position - global_position).normalized()
-				velocity = velocity.move_toward(direction * speed, acceleration * delta)
+		if agent.is_navigation_finished():
+			velocity = velocity.move_toward(Vector2.ZERO, drag * delta)
+		else:
+			var next_position = agent.get_next_path_position()
+			var direction = (next_position - global_position).normalized()
+			velocity = velocity.move_toward(direction * speed, acceleration * delta)
 
 	move_and_slide()
 	look_at(player.global_position)

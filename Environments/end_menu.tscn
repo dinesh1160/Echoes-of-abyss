@@ -73,5 +73,18 @@ theme_override_styles/pressed = ExtResource("1_a3tty")
 theme_override_styles/normal = ExtResource("1_a3tty")
 text = "HOME"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.136
+offset_left = -20.0
+offset_top = 73.0
+offset_right = 20.0
+offset_bottom = 14.872
+grow_horizontal = 2
+text = "Game Over"
+
 [connection signal="pressed" from="VBoxContainer/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="VBoxContainer/Home" to="." method="_on_home_pressed"]

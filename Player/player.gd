@@ -9,7 +9,7 @@ var drag := 400.0
 @onready var End_menu = get_parent().get_node("CanvasLayer/EndMenu")
 
 @onready var sprite: Sprite2D = $Sub
-var min_zoom: float = 0.35
+var min_zoom: float = 0.45
 var max_zoom: float = 0.85
 var zoom_speed: float = 2.0
 var zoom_lerp_speed: float = 0.5
