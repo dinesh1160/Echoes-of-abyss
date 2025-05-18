@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://nn7nu68bf1c0"]
+
+[ext_resource type="Script" path="res://Singletons/sound_manger.gd" id="1_dwh6j"]
+[ext_resource type="AudioStream" uid="uid://n2gal0ius431" path="res://Assests/Music/horror-background-atmosphere-11-240870.mp3" id="1_s2fn5"]
+[ext_resource type="AudioStream" uid="uid://o1tlcqhohvi2" path="res://Assests/Music/horror-background-tension-254885.mp3" id="2_1xdhh"]
+[ext_resource type="AudioStream" uid="uid://b7pefvya1o5da" path="res://Assests/Music/swimming-sounds.mp3" id="4_l3t3u"]
+[ext_resource type="AudioStream" uid="uid://ddvoqel24ii4x" path="res://Assests/Music/brick-falling-100572.mp3" id="5_33q13"]
+
+[node name="SoundManger" type="Node2D"]
+script = ExtResource("1_dwh6j")
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_s2fn5")
+autoplay = true
+parameters/looping = true
+
+[node name="Chase_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1xdhh")
+volume_db = -35.286
+
+[node name="swim_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l3t3u")
+volume_db = -7.615
+pitch_scale = 0.61
+
+[node name="crash_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_33q13")
+volume_db = -10.0

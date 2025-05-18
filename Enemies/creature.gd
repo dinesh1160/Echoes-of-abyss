@@ -28,12 +28,24 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("idle")
 		var flee_direction = (global_position - player.global_position).normalized()
 		velocity = flee_direction * speed*0.3
+		
 	elif halt and !fleeing:
 		animated_sprite_2d.play("idle")
 		velocity = Vector2.ZERO
 		
 	else:
-		
+		if not SoundManager.swim_music.playing:
+			SoundManager.play_swim()
+		var distance = global_position.distance_to(player.global_position)
+		var max_hear_distance = 800.0  # Tune this value based on your game scale
+		var min_volume_db = -40.0  # Volume at max distance
+		var max_volume_db = 0.0    # Volume when very close
+
+		var t = clamp(distance / max_hear_distance, 0.0, 1.0)
+		var volume_db = lerp(max_volume_db, min_volume_db, t)
+
+		SoundManager.set_swim_volume(volume_db)
+			
 		animated_sprite_2d.play("chase")
 		agent.set_target_position(player.global_position)
 

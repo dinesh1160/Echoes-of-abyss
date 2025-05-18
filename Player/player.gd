@@ -67,6 +67,7 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		game_over_by_attack()
 		
 func game_over_by_attack() -> void:
+	SoundManager.play_crash()
 	Camera.zoom = Camera.zoom.lerp(game_over_zoom,1)
 	Camera.apply_shake()
 	await get_tree().create_timer(1).timeout
