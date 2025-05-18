@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @onready var player = get_parent().get_node("Player")
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var fleeing = false
 var halt = false
@@ -24,13 +25,16 @@ func _physics_process(delta: float) -> void:
 
 	if fleeing:
 		# Move away from player directly, ignore pathfinding
+		animated_sprite_2d.play("idle")
 		var flee_direction = (global_position - player.global_position).normalized()
 		velocity = flee_direction * speed*0.3
 	elif halt and !fleeing:
+		animated_sprite_2d.play("idle")
 		velocity = Vector2.ZERO
 		
 	else:
 		
+		animated_sprite_2d.play("chase")
 		agent.set_target_position(player.global_position)
 
 		if agent.is_navigation_finished():

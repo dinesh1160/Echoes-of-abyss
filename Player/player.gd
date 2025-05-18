@@ -54,11 +54,9 @@ func _on_lightarea_body_exited(body: Node2D) -> void:
 	if body == Creature:
 		Creature.exited_zone(self)
 
-
 func _on_haltarea_body_entered(body: Node2D) -> void:
 	if body == Creature:
 		Creature.enter_halt_zone(self)
-
 
 func _on_haltarea_body_exited(body: Node2D) -> void:
 	if body == Creature:

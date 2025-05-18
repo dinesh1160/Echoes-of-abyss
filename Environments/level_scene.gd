@@ -2,6 +2,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var o_2_progress_bar: ProgressBar = $CanvasLayer/O2ProgressBar
+@onready var end_menu: Control = $CanvasLayer/EndMenu
 
 @export var total_gameplay_time: float = 120.0 
 var elapsed_time: float = 0.0
@@ -24,4 +25,10 @@ func _process(delta: float) -> void:
 		game_over_by_depletion()
 	
 func game_over_by_depletion():
+	end_menu.display1()
 	print("Oxygen depleted! Game Over.")
+
+
+func _on_finishline_body_entered(body: Node2D) -> void:
+	if body == player:
+		end_menu.completed()

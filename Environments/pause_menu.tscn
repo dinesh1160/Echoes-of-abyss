@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3arkurt3yjdg"]
+[gd_scene load_steps=6 format=3 uid="uid://c3arkurt3yjdg"]
 
 [ext_resource type="StyleBox" uid="uid://ba510jmoomrmr" path="res://Environments/pause_button.tres" id="1_n56ts"]
 [ext_resource type="Script" path="res://Environments/pause_menu.gd" id="1_yeugd"]
+[ext_resource type="FontFile" uid="uid://5t1laaglopic" path="res://Assests/PlayfulTime-BLBB8.ttf" id="3_whhqy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph3by"]
 
@@ -92,12 +93,17 @@ theme_override_styles/normal = ExtResource("1_n56ts")
 text = "QUIT"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 425.0
-offset_top = 125.0
-offset_right = 690.0
-offset_bottom = 208.0
-theme_override_font_sizes/font_size = 60
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 111.0
+offset_right = 125.0
+offset_bottom = 213.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_whhqy")
+theme_override_font_sizes/font_size = 80
 text = "PAUSED!!"
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
