@@ -68,7 +68,6 @@ limit_left = -4645
 script = ExtResource("2_njyce")
 
 [node name="ColorRect2" type="ColorRect" parent="Camera2D"]
-visible = false
 material = SubResource("ShaderMaterial_jsprk")
 anchors_preset = 8
 anchor_left = 0.5

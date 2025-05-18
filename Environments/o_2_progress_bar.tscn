@@ -21,3 +21,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_tl4wa")
 value = 90.0
 fill_mode = 1
 show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_top = -3.0
+offset_right = 115.0
+offset_bottom = 20.0
+text = "Oxygen Level"
+uppercase = true
